@@ -1,3 +1,27 @@
+# Link Shortener
+Followed tutorial to create serverless Link Shortener here: [https://www.freecodecamp.org/news/how-to-build-a-serverless-app/](https://www.freecodecamp.org/news/how-to-build-a-serverless-app/)
+- Deployed on Vercel (free JAM stack hosting site)
+- Frontend: Next.js + TypeScript + Ant Design (components Library)
+- NO MIDDLEWARE (though technically Next.js serverless functions are executed by Node.js)
+- Backend: MongoDB
+
+## Steps
+- Create tsconfig.json file - `touch tsconfig.json`
+- Install TypeScript - `npm install --save-dev typescript @types/react @types/node`
+- Next.js detects & populates tsconfig.json
+- Manually change index.js, _app.js, api/hello.js to TSX/TS files
+- Install Ant Design components & Axios `npm install antd axios`
+- Create UI inside `index.tsx` with component library and style with `Home.module.css`
+- Initialize free MongoDB Atlas cloud database & add a user
+- Copy-paste MongoDB URI into .env.local for Next.js to load env variables (.env file for reference)
+- Install MongoDB package - `npm install mongodb`
+- Create script `_connector.ts` to connect to Atlas
+- Create script `shorten_link.ts` to shorten link and save link into database using `connector.ts`
+- Add `vercel.json` to change redirect link to not include `/api/redirect` to `r/`
+- Add MONGODB_URI secret through Vercel UI
+- Make sure that the cluster has allowlisted connections from anywhere, since Vercel does not support static IP addresses
+
+## NEXT Auto Generated
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
